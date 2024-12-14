@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<!-- SITE TITLE -->
+	<title>Dilip Rout - Webpage</title>
+
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+	<style>
+	
+	.tm-home-subtitle {
+    font-size: 2rem;
+    text-align: center;
+    overflow: hidden;
+    height: 2.5rem; /* Ensure height matches the line height */
+    position: relative;
+}
+
+#rotating-text {
+    display: inline-block;
+    position: relative;
+    animation: fadeSlideUp 3s linear infinite;
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 1; transform: translateY(0); }
+    40% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0; transform: translateY(-20px); }
+    90% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.work-wrapper {
+    height: 500px; /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Optionally, space out the content inside the wrapper */
+}
+
+	
+	</style>
+
+</head>
+<body data-spy="scroll" data-target="#rock-navigation">
+	<!-- START NAVIGATION -->
+	<div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand"><img src="/images/logo/logo.png" style="width: 50px;"></a>
+			</div>
+			<nav class="collapse navbar-collapse" id="rock-navigation">
+				<ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+					<li><a href="#home" class="smoothScroll">Home</a></li>
+					<li><a href="#exp" class="smoothScroll">Experience</a></li>
+					<li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
+					<li><a href="#resume" class="smoothScroll">Resume</a></li>
+					<li><a href="https://draftright.in" class="smoothScroll">Blog</a></li>
+					<li><a href="#about" class="smoothScroll">About</a></li>
+					<li><a href="#contact" class="smoothScroll">Contact</a></li>
+				</ul>
+			</nav>
+
+		</div>
+	</div>
+	<!-- END NAVIGATION -->
+
+	<!-- START HOME -->
+	<section id="home" class="templatemo-home">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-1"></div>
+				<div class="col-md-8 col-sm-10">
+					<h1 class="tm-home-title"><strong>Dilip Rout</strong></h1>
+					<h2 class="tm-home-subtitle"> <a href="" class="typewrite" data-period="2000" data-type='[ "A TECHNICAL WRITER.", "A FRONT-END DEVELOPMENT ENTHUSIAST.", "AN AVID MOTORCYCLIST.", "AN AMATUER CAMERAMAN." ]'>
+						<span class="wrap"></span>
+					  </a></h2>
+					<script>
+						var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+						
+					</script>
+					<p>Welcome to my digital space – where creativity meets expertise. <br>Explore my work, portfolio, and insights into technical writing and more...
+						<br> Let us work together. Thank you.</p>
+					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Let's Begin</a>
+				</div>
+				<div class="col-md-2 col-sm-1"></div>
+			</div>
+		</div>
+	</section>
+	<!-- END HOME -->
+
+	<!-- START work -->
+	<section id="exp" class="tm-padding-top-bottom-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-11">
+					<h2 class="title">My <strong>Work</strong></h2>						
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<div class="work-wrapper">
+						<img src="/images/logo/RGB_EVBG-InfiniteBlue_Horizontal_Logo.svg" alt="Mobile UX" class="work-image">
+						<h3 class="text-uppercase tm-work-h3">Infinite Blue <br></h3>
+						<hr>
+						<p>Since May 2019</p>
+						<p><strong>Sr Information Developer</strong></p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<div class="work-wrapper">
+						<img src="/images/logo/Progress_Software_logo.svg.png" alt="Mobile UX" class="work-image">
+						<h3 class="text-uppercase tm-work-h3">Progress Software</h3>
+						<hr>
+						<p>Jul 2018 - Apr 2019</p>
+						<p><strong>Information Developer</strong></p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<div class="work-wrapper">
+						<img src="/images/logo/Proxim-Logo-3.png" alt="Mobile UX" class="work-image">						
+						<h3 class="text-uppercase tm-work-h3">Proxim Wireless</h3>
+						<hr><p>Nov 2016 - Jul 2018</p>
+						<p><strong>Technical Writer</strong></p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<div class="work-wrapper">
+						<img src="/images/logo/Cyient_logo.jpg" alt="Mobile UX" class="work-image">	
+						<h3 class="text-uppercase tm-work-h3">Cyient Ltd.</h3>
+						<hr>
+						<p>Jun 2013 - Oct 2016</p>
+						<p><strong>Design Engineer</strong></p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<!-- END work -->
+
+	<!-- START PORTFOLIO -->
+	<section id="portfolio" class="tm-portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 wow bounce">
+					<div class="title">
+						<h2 class="tm-portfolio-title">My <strong>Portfolio</strong></h2>
+					</div>
+
+					<!-- START ISO SECTION -->
+					<div class="iso-section">
+						<ul class="filter-wrapper clearfix">
+							<li><a href="#" class="opc-main-bg selected" data-filter="*">All</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".write">Technical Writing</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".design">Designing</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".blog">Blog</a></li>
+							
+						</ul>
+						<div class="iso-box-section">
+							<div class="iso-box-wrapper col4-iso-box">
+								<div class="iso-box write col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-1.png" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">Infinite Blue </h3>
+											<p>Platform Documentation</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box write blog design col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-2.png" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">Draftright</h3>
+											<p>An average tech writing blog site built on Jeykll Platform</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box design col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-3.png" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">Archvue Design Studio</h3>
+											<p>Website for a budding architecture/interior designing firm based in Hyderabad, Telangana.</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box design col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-4.png" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">Medtrends</h3>
+											<p>Website for health care service provider company based in Agartala, Tripura.</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box wordpress col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-img5.jpg" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">UX Design</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box html photoshop col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-img6.jpg" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">UX Design</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box photoshop col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-img7.jpg" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">UX Design</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+										</div>
+									</div>
+								</div>
+								<div class="iso-box wordpress col-md-3 col-sm-3 col-xs-12">
+									<div class="portfolio-thumb">
+										<img src="images/portfolio-img8.jpg" class="fluid-img" alt="portfolio img">
+										<div class="portfolio-overlay">
+											<h3 class="portfolio-item-title">UX Design</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END PORTFOLIO -->
+
+<!-- START RESUME -->
+<section id="resume" class="tm-padding-top-bottom-100">
+    <div class="container text-center">
+        <h2 class="title">Download My <strong>Resume</strong></h2>
+		<p class="">I have accumulated a variety of skills and experiences throughout my career that are outlined in my resume. If you're interested in learning more about my professional background and qualifications, feel free to download my resume.</p>
+        
+        <!-- Resume Download Link -->
+        <div class="download-resume">
+            <a href="/images/DilipRout_TW_DecadeExp.pdf" class="btn btn-primary" download="Dilip_Rout_Resume.pdf">Download My Resume</a>
+        </div>
+    </div>
+</section>
+<!-- END RESUME -->
+
+
+	<!-- START ABOUT -->
+	<section id="about" class="tm-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-7">
+					<div class="title">
+						<h2>This is <strong>me</strong></h2>
+						<h1 class="tm-red-text">Technical <strong>Writer</strong> and more..</h1>
+					</div>
+					<p>I’m a storyteller at heart, with a decade-long journey of turning the intricate language of technology into narratives that empower users. As a Technical Writer, I thrive on transforming complexity into clarity, creating content that informs and engages. Whether it’s software guides, hardware manuals, or aerospace documentation, my work bridges the gap between cutting-edge innovation and its audience.</p>
+					<p>My journey doesn’t stop at writing. I’m a perpetual learner, always seeking new ways to elevate content and enhance user experiences. From collaborating with agile teams to leveraging analytics and UX principles, I embrace every opportunity to innovate and make a meaningful impact.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END ABOUT -->
+
+	<!-- START SOCIAL -->
+	<section id="social" class="tm-social">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.3s">
+					<div class="media facebook">
+						<a href="#">
+							<div class="media-object pull-left">
+								<i class="fa fa-linkedin"></i>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading tm-social-title">Follow me on</h4>
+								<h3>LinkedIn</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.6s">
+					<div class="media twitter">
+						<a href="#">
+							<div class="media-object pull-left">
+								<i class="fa fa-instagram"></i>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading tm-social-title">Follow me on</h4>
+								<h3>Instagram</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.9s">
+					<div class="media pinterest">
+						<a href="#">
+							<div class="media-object pull-left">
+								<i class="fa fa-web"></i>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading tm-social-title">Check out my blog</h4>
+								<h3>Draftright</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END SOCIAL -->
+
+	<!-- START CONTACT -->
+	<section id="contact" class="tm-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">					
+					<h2 class="title">Drop <strong>me a line</strong></h2>
+					<hr>					
+				</div>
+				<div class="col-md-1 col-sm-1"></div>
+				<div class="col-md-10 col-sm-10">
+					<form action="#" method="post">
+						<div class="col-md-6 col-sm-6">
+							<input class="form-control" type="text" placeholder="Your Name">
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<input class="form-control" type="email" placeholder="Your Email">
+						</div>
+						<div class="col-md-12 col-sm-12">
+							<input class="form-control" type="text" placeholder="Your Subject">
+							<textarea class="form-control" placeholder="Your Message" rows="6"></textarea>
+						</div>
+						<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+							<input class="form-control" type="submit" value="SHOOT MESSAGE">
+						</div>
+					</form>
+				</div>
+				<div class="col-md-1 col-sm-1"></div>
+				<div class="col-md-12 col-sm-12">
+					<p>Copyright &copy; 2024 | developed: <a rel="nofollow noopener" href="https://draftright.in">template mo</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END CONTACT -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/isotope.js"></script>
+	<script src="js/imagesloaded.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
